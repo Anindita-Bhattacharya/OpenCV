@@ -1,0 +1,44 @@
+import  cv2
+
+cap=cv2.VideqoCapture(0);
+#while loop in oreder to capture the frame continously
+while(True):
+    ret,frame=cap.read()
+    #ret will be true if frame is available otherwise it will be false
+    #frame variable will store the captured frame
+    cv2.imshow('frame',frame) #this will show the frames
+    if cv2.waitKey(1) & 0xFF==ord('q'): #if q key is pressed then come out of the loop
+        break
+
+#release the resources
+cap.release()
+cv2.destroyAllWindows()
+
+#Output
+#Vedio will be captured from our webcam
+#when q key is pressed then the window gets closed
+
+-------------------------------------------------------------------------------------
+CONVERT COLORED VEDIO TO GREY SCALE IMAGE
+
+import  cv2
+
+cap=cv2.VideoCapture(0);
+#while loop in oreder to capture the frame continously
+while(True):
+    ret,frame=cap.read()
+    #ret will be true if frame is available otherwise it will be false
+    #frame variable will store the captured frame
+    gray=cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
+    cv2.imshow('frame',gray) #this will show the frames
+    if cv2.waitKey(1) & 0xFF==ord('q'): #if q key is pressed then come out of the loop
+        break
+
+#release the resources
+cap.release()
+cv2.destroyAllWindows()
+
+#Output
+#Vedio will be captured from our webcam
+#when q key is pressed then the window gets closed
+
